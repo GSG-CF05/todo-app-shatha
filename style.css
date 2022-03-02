@@ -1,0 +1,105 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Varela Round", sans-serif;
+  width: 100%;
+}
+
+.todo-content {
+  margin: 25px;
+  text-align: center;
+}
+.header {
+  text-align: center;
+  margin: 15px;
+  font-family: "Balsamiq Sans", cursive;
+}
+.todo-input {
+  padding: 13px;
+  width: 83%;
+  border-radius: 2px;
+  border: 1px solid lightgray;
+}
+.todo-button {
+  padding: 12px;
+  border-radius: 2px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+}
+.form {
+  margin: 31px 5px;
+}
+
+.todo-list {
+  list-style-type: none;
+}
+.todo-list div {
+  display: flex;
+  height: 45px;
+  background-color: #a9bbe7;
+  margin-bottom: 10px;
+  padding: 13px 5px;
+  border-radius: 5px;
+  position: relative;
+}
+.fa-pen {
+  color: green;
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+}
+
+.fa-trash {
+  color: red;
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+.todo-list {
+  margin: 15px;
+}
+
+.main-image {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  body {
+    display: flex;
+  }
+  .main-image {
+    width: 50%;
+    margin: 15px;
+  }
+  .todo-content {
+    width: 50%;
+    margin: 80px 50px 0px 0px;
+  }
+  .header {
+    font-size: 30px;
+  }
+  .todo-input {
+    width: 90%;
+  }
+}
+
+/* @media (min-width: 1200px) {
+    img {
+      width: 50%;
+    }
+    .todo-list {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .todo-input {
+      width: 48%;
+    }
+    .header {
+      font-size: 30px;
+    }
+  } */
