@@ -4,6 +4,7 @@ const todoButton= document.querySelector('.todo-button');
 const todoList= document.querySelector('.todo-list');
 //add action listener
 todoButton.addEventListener('click', addNewItem);
+document.addEventListener('DOMContentLoaded', getTodoListOnLoad);
 
 //function to add task list into the ul
 function addNewItem(e){
@@ -19,6 +20,8 @@ function addNewItem(e){
       newDiv.innerHTML= newItem;
       todoList.appendChild(newDiv)
       newDiv.classList.add('todo-item') //add style for div
+
+      saveToLocalStorage(todoInput.value);
     todoInput.value=""; //!once task added leave the input blank
 }
 
