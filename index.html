@@ -5,8 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
+    <!-- tag link to link css file -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- accses icone from fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/da3c28159f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- accses fonts via links -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
+    <img class="main-image" src="image/photo1.webp" />
+    <div class="todo-content">
+      <header class="header">
+        <h1>ToDo App</h1>
+      </header>
+      <form class="form">
+        <input type="text" class="todo-input" placeholder="type your task" />
+        <button class="todo-button" type="submit">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </form>
+      <div>
+        <ul class="todo-list">
+          <div>
+            <li>Lorem ipsum dolor sit</li>
+            <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+          <div>
+            <li>Lorem ipsum dolor sit</li>
+            <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+          <div>
+            <li>Lorem ipsum dolor sit</li>
+            <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
     
 </body>
 </html>
