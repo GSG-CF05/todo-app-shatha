@@ -22,3 +22,34 @@ function addNewItem(e){
     todoInput.value=""; //!once task added leave the input blank
 }
 
+//save items to local storage
+function saveToLocalStorage(todo){
+    let todos
+    if(localStorage.getItem('todos')==null){
+    todos=[]
+    }
+    else {
+        todos=JSON.parse(localStorage.getItem('todos'))//transforming json string into a js object
+    }
+    todos.push(todo)
+    localStorage.setItem('todos', JSON.stringify(todos))//transforming into js object to json string 
+}
+
+// get list in page when it loaded
+function getTodoListOnLoad(){
+    if(localStorage.getItem('todos')){
+        todos= JSON.parse(localStorage.getItem('todos'))
+    }
+
+    todos.forEach(todo => {
+        let newDiv= document.createElement('div')
+      let newItem = `
+        <li>${todo}</li>
+        <i class="fa-solid fa-pen"></i>
+        <i class="fa-solid fa-trash"></i>
+      `;
+      newDiv.innerHTML= newItem;
+      todoList.appendChild(newDiv)
+      newDiv.classList.add('todo-item')
+    });
+}
