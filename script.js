@@ -5,6 +5,7 @@ const todoList= document.querySelector('.todo-list');
 //add action listener
 todoButton.addEventListener('click', addNewItem);
 document.addEventListener('DOMContentLoaded', getTodoListOnLoad);
+todoList.addEventListener('click', handelDeleteOrEdit);
 
 //function to add task list into the ul
 function addNewItem(e){
@@ -55,4 +56,25 @@ function getTodoListOnLoad(){
       todoList.appendChild(newDiv)
       newDiv.classList.add('todo-item')
     });
+}
+// function responsible to handel if the event for delete or edit depends on the class
+function handelDeleteOrEdit(e){
+  if(e.target.classList.contains('fa-trash'))
+  deleteTodo(e);
+  if(e.target.classList.contains("fa-pen"))
+  editTodo(e);
+}
+
+//delete function 
+function deleteTodo(e){
+   let item = e.target.parentNode; //access the parent of e which is div
+   let array=JSON.parse(localStorage.getItem('todos')) //access the array from local storage
+   let itemDelete=array.indexOf(item.innerText)//get the index for item 
+   array.splice(itemDelete, 1)//delete item from array
+   localStorage.setItem('todos', JSON.stringify(array))//add array to local storage after delete item
+   item.remove();//remove the item from the page
+}
+//edit function
+function editTodo(e){
+
 }
