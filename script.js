@@ -1,9 +1,12 @@
 //access elements
 const todoInput= document.querySelector('.todo-input');
-const todoButton= document.querySelector('.todo-button');
+const addTaskButton= document.getElementById('add-task-but');
+const saveTaskButton= document.getElementById('save-task-but');
 const todoList= document.querySelector('.todo-list');
+const saveIndex= document.getElementById('save-index');
+
 //add action listener
-todoButton.addEventListener('click', addNewItem);
+addTaskButton.addEventListener('click', addNewItem);
 document.addEventListener('DOMContentLoaded', getTodoListOnLoad);
 todoList.addEventListener('click', handelDeleteOrEdit);
 
@@ -11,7 +14,8 @@ todoList.addEventListener('click', handelDeleteOrEdit);
 function addNewItem(e){
 
     e.preventDefault();
-   
+
+    if(todoInput.value!=""){ 
     let newDiv= document.createElement('div')
       let newItem = `
         <li>${todoInput.value}</li>
@@ -23,6 +27,7 @@ function addNewItem(e){
       newDiv.classList.add('todo-item') //add style for div
 
       saveToLocalStorage(todoInput.value);
+    }
     todoInput.value=""; //!once task added leave the input blank
 }
 
