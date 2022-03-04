@@ -9,6 +9,9 @@ body {
   width: 100%;
 }
 
+h1 span {
+  color: #a9bbe7;
+}
 .todo-content {
   margin: 25px;
   text-align: center;
@@ -30,14 +33,28 @@ body {
   border: 1px solid lightgray;
   cursor: pointer;
 }
+.todo-button:hover {
+  background-color: lightgreen;
+}
+
+.todo-button i:hover {
+  font-size: 15px;
+}
+#save-task-but {
+  display: none;
+  padding: 9px;
+  height: 43px;
+}
+
 .form {
   margin: 31px 5px;
 }
 
 .todo-list {
   list-style-type: none;
+  margin: 15px;
 }
-.todo-list div {
+.todo-item  {
   display: flex;
   height: 45px;
   background-color: #a9bbe7;
@@ -46,28 +63,33 @@ body {
   border-radius: 5px;
   position: relative;
 }
-.fa-pen {
+.todo-item .fa-pen {
   color: green;
   position: absolute;
   right: 40px;
   cursor: pointer;
 }
+.todo-item .fa-pen:hover {
+  color: green;
+  font-size: 20px;
+}
 
-.fa-trash {
+.todo-item .fa-trash  {
   color: red;
   position: absolute;
   right: 15px;
   cursor: pointer;
 }
-.todo-list {
-  margin: 15px;
+.todo-item .fa-trash:hover {
+  color: red;
+  font-size: 20px;
 }
-
 .main-image {
   width: 80%;
   display: block;
   margin: 0 auto;
 }
+
 @media (min-width: 1200px) {
   body {
     display: flex;
