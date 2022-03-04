@@ -81,5 +81,17 @@ function deleteTodo(e){
 }
 //edit function
 function editTodo(e){
-
+  let item = e.target.parentNode;
+  let allItems=JSON.parse(localStorage.getItem('todos'))
+  let itemEdit=allItems.indexOf(item.innerText) //the idex for editable item 
+  saveIndex.value=itemEdit; // put a value for hidden input which is index 
+  todoInput.value=allItems[itemEdit] // put an editable item in todo input to edit it 
+  addTaskButton.style.display="none"; // hide add button
+  saveTaskButton.style.display="inline"; //display save button 
 }
+// function responsible for save edit 
+saveTaskButton.addEventListener('click', function(){
+  let allItems=JSON.parse(localStorage.getItem('todos'))
+  allItems[saveIndex.value]= todoInput.value; 
+  localStorage.setItem('todos', JSON.stringify(allItems))
+})
