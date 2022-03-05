@@ -3,10 +3,24 @@
   padding: 0px;
   box-sizing: border-box;
 }
+:root {
+  --body-color: white;
+  --todo-item-bg: #a9bbe7;
+  --todo-item-color: black;
+  --toggle-icon-color: #223d89;
+}
+
+.dark {
+  --body-color: #223d89;
+  --todo-item-bg: black;
+  --todo-item-color: white;
+  --toggle-icon-color: white;
+}
 
 body {
   font-family: "Varela Round", sans-serif;
   width: 100%;
+  background-color: var(--body-color);
 }
 
 h1 span {
@@ -57,11 +71,12 @@ h1 span {
 .todo-item  {
   display: flex;
   height: 45px;
-  background-color: #a9bbe7;
+  background-color: var(--todo-item-bg);
   margin-bottom: 10px;
   padding: 13px 5px;
   border-radius: 5px;
   position: relative;
+  color: var(--todo-item-color);
 }
 .todo-item .fa-pen {
   color: green;
@@ -88,6 +103,14 @@ h1 span {
   width: 80%;
   display: block;
   margin: 0 auto;
+}
+.toggle-icon {
+  font-size: 30px;
+  height: 50px;
+  color: var(--toggle-icon-color);
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 @media (min-width: 1200px) {

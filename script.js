@@ -95,3 +95,30 @@ saveTaskButton.addEventListener('click', function(){
   allItems[saveIndex.value]= todoInput.value; 
   localStorage.setItem('todos', JSON.stringify(allItems))
 })
+
+
+//light and dark mood
+const bodyElement =document.querySelector('body');
+const toggleIcon = document.querySelector('.toggle-icon');
+
+toggleIcon.addEventListener('click' , changeTheme);
+
+function toggleDarkTheme(){
+  bodyElement.classList.toggle('dark')
+}
+
+function changeTheme(){
+  darkMood= localStorage.getItem('dark')
+  if(darkMood != 'on'){
+    toggleDarkTheme();
+    darkMood= localStorage.setItem('dark', 'on')
+  }else {
+    toggleDarkTheme();
+    darkMood= localStorage.setItem('dark', 'off')
+  }
+}
+let darkMood= localStorage.getItem('dark')
+
+if(darkMood == 'on'){
+  toggleDarkTheme();
+}
